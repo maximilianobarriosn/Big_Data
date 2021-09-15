@@ -20,7 +20,6 @@
 
 8. [SQL](#8-sql)
 
-
 ## 1. Repository Description
 
 My name is Maximiliano and I was a Ssr Python Developer but now working in Big Data & Cloud (GCP) projects. Preparing to certificate as a Professional Data Engineer in Google Cloud Platform.
@@ -36,6 +35,7 @@ Items in this repository:
 - [Python](Python): Basic examples, numpy, matplotlib, OOP and Unit Testing.
 - [SQL](SQL): queries, stored procedures, UDF, etc.
 
+→ [index](#index)
 
 ## 2. Apache Beam in Java
 
@@ -55,6 +55,8 @@ Apache Beam is a Big Data framework to process bounded and unbounded data. Strea
 - [Section 9](ApacheBeamJava/section9): SQL like queries, Count, Join.
 - [Section 10](ApacheBeamJava/section10): Dataproc Pipelines, BigQuery Connector.
 
+→ [index](#index)
+
 ## 3. Change Data Capture
 
 In this section, we can found a Java code example using PubSub as input (reading a JSON from the topic), process data and write to BigQuery. Originally, Debezium was used to establish a connection between a relational database (SQL) and publish changes in a PubSub Topic. Pipeline runs in Dataproc.
@@ -64,6 +66,8 @@ In this section, we can found a Java code example using PubSub as input (reading
 - Dependencies: [POM file](CDC_Java_Example/pom.xml)
 - Project Config: [JSON config file](CDC_Java_Example/ProjectConfig.json)
 - BigQuery table schema: [BQ schema](CDC_Java_Example/BigQuerySchema.java) and [row example](CDC_Java_Example/CustomersDataExample.json)
+
+→ [index](#index)
 
 ## 4. Google Cloud Platform
 
@@ -76,11 +80,15 @@ Python example using different GCP modules:
 - [NoSQL](GCP/NoSQL): indexation and queries examples in DataStore.
 - [Sending messages to PubSub](GCP/send_message_to_topic_pubsub): automatization using python to send multiple messages to PubSub (multiprocess, args with command line, custom input file).
 
+- → [index](#index)
+
 ## 5. Linux
 
 Most common commands and basic bash scripts examples. 
 
 (SECTION IN PROGRESS)
+
+→ [index](#index)
 
 ## 6. PySpark
 
@@ -92,6 +100,8 @@ In this section you can find:
 - Jupyter Notebooks ([notebook_exercise_1](PySpark/jupyter_notebooks/ej_1.ipynb) - [notebook_exercise_2](PySpark/jupyter_notebooks/ej_2.ipynb))
 - Input Data: [data.csv](PySpark/example_data/web.csv)
 
+→ [index](#index)
+
 ## 7. Python
 
 Python scripts using some libraries.
@@ -100,6 +110,8 @@ In this section:
 - [Basic Examples](Python/BasicExamples): generators, decorators, closures.
 - [Differential Equations](Python/Differential_Equations): solving differential equations with ODE, numpy and matplotlib to show results.
 - [OOP and Unit Testing](Python/POO_example_Matrix): designing a class and testing methods.
+
+→ [index](#index)
 
 ## 8. SQL
 
