@@ -6,11 +6,11 @@
 
 1. [Repository Description](#1-repository-description)
 
-2. [Apache Beam in Java](#2-apache-beam-java)
+2. [Apache Beam in Java](#2-apache-beam-in-java)
 
-3. [Change Data Capture](#3-cdc-example)
+3. [Change Data Capture](#3-change-data-capture)
 
-4. [Google Cloud Platform](#4-gcp)
+4. [Google Cloud Platform](#4-google-cloud-platform)
 
 5. [Linux - Scripts and Commands](#5-linux)
 
