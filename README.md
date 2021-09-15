@@ -18,6 +18,8 @@
 
 7. [Python](#7-python)
 
+8. [SQL](#8-sql)
+
 
 ## 1. Repository Description
 
