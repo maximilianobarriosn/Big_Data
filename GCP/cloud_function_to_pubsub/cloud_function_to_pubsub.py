@@ -7,7 +7,7 @@ from concurrent import futures
 from google.cloud import pubsub_v1
 
 # TODO(developer)
-project_id = "cdcproject-321019"
+project_id = "your_project-321019"
 topic_id = "group_topic_1"
 
 # Create publish client.

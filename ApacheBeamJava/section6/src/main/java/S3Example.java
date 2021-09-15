@@ -18,7 +18,7 @@ public class S3Example {
 
         myOption.setAwsCredentialsProvider(new AWSStaticCredentialsProvider(awsCredObject));
 
-        PCollection<String> pInput =  p.apply(TextIO.read().from("s3://beam-udemy-training-maxi/input/user_order.csv"));
+        PCollection<String> pInput =  p.apply(TextIO.read().from("s3://your_aws_bucket/input/user_order.csv"));
 
         pInput.apply(ParDo.of(new DoFn<String, Void>() {
 

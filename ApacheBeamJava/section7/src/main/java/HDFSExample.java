@@ -16,11 +16,11 @@ public class HDFSExample {
         // Connection between HDFS and apache beam
         Configuration conf = new Configuration();
 
-        conf.set("fs.defaultFS", "hdfs://172.31.17.138:8020");
+        conf.set("fs.defaultFS", "hdfs://your_ip:8020");
         conf.set("fs.hdfs.impl", org.apache.hadoop.hdfs.DistributedFileSystem.class.getName());
         conf.set("fs.file.impl", org.apache.hadoop.fs.LocalFileSystem.class.getName());
 
-        String[] args1 = new String[] { "--hdfsConfiguration=[{\"fs.default.name\" : \"hdfs://172.31.17.138:8020\"}]",
+        String[] args1 = new String[] { "--hdfsConfiguration=[{\"fs.default.name\" : \"hdfs://your_ip:8020\"}]",
                 "--runner=DirectRunner" };
 
         HadoopFileSystemOptions hdfsOptions = PipelineOptionsFactory.fromArgs(args1)
@@ -30,7 +30,7 @@ public class HDFSExample {
 
         Pipeline p = Pipeline.create(hdfsOptions);
 
-        PCollection<String> pHdfs = p.apply(TextIO.read().from("hdfs://172.31.17.138:8020/user/user.csv"));
+        PCollection<String> pHdfs = p.apply(TextIO.read().from("hdfs://your_ip:8020/user/user.csv"));
 
         pHdfs.apply(ParDo.of(new DoFn<String, Void>() {
 

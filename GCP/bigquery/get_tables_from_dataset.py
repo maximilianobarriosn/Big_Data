@@ -1,7 +1,7 @@
 from google.cloud import bigquery
-client = bigquery.Client(project='cdcproject-321019')
+client = bigquery.Client(project='your_project_id')
 
-search_dataset = 'cdcproject'
+search_dataset = 'your_dataset'
 dataset = client.get_dataset(search_dataset)  # Make an API request.
 project = client.project
 

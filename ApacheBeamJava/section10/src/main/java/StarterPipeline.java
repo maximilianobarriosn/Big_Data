@@ -20,9 +20,9 @@ public class StarterPipeline {
     public static void main(String[] args) {
 
         MyOption myOptions = PipelineOptionsFactory.fromArgs(args).withValidation().as(MyOption.class);
-        myOptions.setTempLocation("gs://udemy_training_max/input");
-        myOptions.setStagingLocation("gs://udemy_training_max/input");
-        myOptions.setProject("cdcproject-323214");
+        myOptions.setTempLocation("gs://my-bucket/input");
+        myOptions.setStagingLocation("gs://my-bucket/input");
+        myOptions.setProject("my-project");
 
         Pipeline p = Pipeline.create(myOptions);
 
@@ -37,7 +37,7 @@ public class StarterPipeline {
 
         TableSchema tblSchema = new TableSchema().setFields(columns);
 
-        PCollection<String> pInput = p.apply(TextIO.read().from("gs://udemy_training_max/input/user_.csv"));
+        PCollection<String> pInput = p.apply(TextIO.read().from("gs://my-bucket/input/user_.csv"));
 
         /* To use without BigQuery, only print data:
         pInput.apply(ParDo.of(new DoFn<String, Void>() {
