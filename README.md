@@ -80,7 +80,7 @@ Python example using different GCP modules:
 - [NoSQL](GCP/NoSQL): indexation and queries examples in DataStore.
 - [Sending messages to PubSub](GCP/send_message_to_topic_pubsub): automatization using python to send multiple messages to PubSub (multiprocess, args with command line, custom input file).
 
-- → [index](#index)
+→ [index](#index)
 
 ## 5. Linux
 
