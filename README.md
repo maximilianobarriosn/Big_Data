@@ -39,6 +39,8 @@ Items in this repository:
 
 ## 2. Apache Beam in Java
 
+![](./apache_beam.png)
+
 Java code examples using Apache Beam.
 
 Apache Beam is a Big Data framework to process bounded and unbounded data. Streaming and batch processing can be done using Apache Beam, also has connectors with different cloud tools, platforms or applications.
@@ -53,11 +55,13 @@ Apache Beam is a Big Data framework to process bounded and unbounded data. Strea
 - [Section 7](ApacheBeamJava/section7): HDFS, JDBC IO, MongoDB.
 - [Section 8](ApacheBeamJava/section8): Real Time Streaming, Kafka, Deserializer.
 - [Section 9](ApacheBeamJava/section9): SQL like queries, Count, Join.
-- [Section 10](ApacheBeamJava/section10): Dataproc Pipelines, BigQuery Connector.
+- [Section 10](ApacheBeamJava/section10): Dataflow Pipelines, BigQuery Connector.
 
 → [index](#index)
 
 ## 3. Change Data Capture
+
+![](cdc.png)
 
 In this section, we can found a Java code example using PubSub as input (reading a JSON from the topic), process data and write to BigQuery. Originally, Debezium was used to establish a connection between a relational database (SQL) and publish changes in a PubSub Topic. Pipeline runs in Dataproc.
 
@@ -70,6 +74,9 @@ In this section, we can found a Java code example using PubSub as input (reading
 → [index](#index)
 
 ## 4. Google Cloud Platform
+
+![img.png](GCP.png)
+
 
 Python example using different GCP modules:
 - [AVRO and GCS](GCP/avro): reading and transforming an avro file (local and using GCS).
@@ -84,6 +91,7 @@ Python example using different GCP modules:
 
 ## 5. Linux
 
+![img.png](linux.png)
 Most common commands and basic bash scripts examples. 
 
 (SECTION IN PROGRESS)
@@ -91,6 +99,7 @@ Most common commands and basic bash scripts examples.
 → [index](#index)
 
 ## 6. PySpark
+![](pyspark.png)
 
 Solving 2 excercises in PySpark. Spark is a Big Data Framework based on Hadoop. It can process batch or streaming.
 
@@ -103,6 +112,7 @@ In this section you can find:
 → [index](#index)
 
 ## 7. Python
+![img.png](python.png)
 
 Python scripts using some libraries.
 
@@ -114,6 +124,8 @@ In this section:
 → [index](#index)
 
 ## 8. SQL
+
+![img.png](sql.png)
 
 (SECTION IN PROGRESS)
 
