@@ -1,0 +1,6 @@
+Flask==2.0.1
+avro==1.10.2
+fastavro==1.4.3
+google-cloud-storage==1.24.1
+googleapis_common_protos
+

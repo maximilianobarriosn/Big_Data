@@ -1,0 +1,31 @@
+{
+  "before":{
+    "id":1001,
+    "first_name":"Sally",
+    "last_name":"Thomas",
+    "email":"sally.thomas@acme.com"
+  },
+  "after":{
+    "id":1001,
+    "first_name":"your-name",
+    "last_name":"your last-name",
+    "email":"your email"
+  },
+  "source":{
+    "version":"1.6.0.Final",
+    "connector":"postgresql",
+    "name":"cdc-postgres-instance",
+    "ts_ms":1626716201707,
+    "snapshot":"false",
+    "db":"postgres",
+    "sequence":"[null,\"118013376\"]",
+    "schema":"inventory",
+    "table":"customers1",
+    "txId":2731,
+    "lsn":118069040,
+    "xmin":null
+  },
+  "op":"u",
+  "ts_ms":1626716196328,
+  "transaction":null
+}

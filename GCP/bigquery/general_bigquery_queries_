@@ -1,0 +1,13 @@
+bigquery queries:
+
+
+// See schema info
+SELECT * FROM `bigquery-public-data.baseball.INFORMATION_SCHEMA.COLUMNS`
+WHERE table_name='my_table';
+
+// Are partitioned or clustered columns?
+SELECT * FROM `bigquery-public-data.baseball.INFORMATION_SCHEMA.COLUMNS`
+WHERE is_partitioning_column = 'YES' OR clustering_ordinal_position IS NOT NULL;
+
+// Describe table schema
+bq show --format=prettyjson mimetic-might-312320:test_gentera.lego_aclaraciones | jq '.schema.fields'

@@ -1,0 +1,56 @@
+SELECT TRANSACTION_ID as TRANSACTION_NUMBER,
+
+
+ FROM `cdcproject-321019.dsWorkshop.table_api` LIMIT 10
+
+SELECT TRANSACTION_ID as TRANSACTION_NUMBER,
+SUBSTR(TRANSACTION_ID, 1, 7) AS TRANS_START_WITH,
+IF( TRANS_START_WITH='1611344', 'LOCAL','FOREIGN') AS SHIP_TYPE
+FROM `cdcproject-321019.dsWorkshop.table_api` LIMIT 3
+
+
+SELECT 
+  transaction_id AS TRANSACTION_NUMBER,
+  LEFT(transaction_id, 7) AS TRANS_STARTS_WITH,
+  IF(LEFT(transaction_id, 7)='1611344','LOCAL','FOREIGN') AS SHIP_TYPE,
+  CAST(JSON_EXTRACT(data, '$.shipment_ctes_stage.after_value.ctes[0].serie') AS INT64) AS SERIE,
+  CAST(REPLACE(JSON_EXTRACT(data, '$.shipment_ctes_stage.after_value.ctes[0].base_cost'),"`"","") AS FLOAT64) AS BASE_COST,
+  JSON_EXTRACT(data, '$.shipment_ctes_stage.after_value.ctes[0].type') AS TYPE,
+  JSON_EXTRACT(data, '$.shipment_ctes_stage.after_value.ctes[0].dest_city') AS CITY_DESTINATION,
+  JSON_EXTRACT(data, '$.shipment_ctes_stage.after_value.ctes[0].origin_city') AS ORIGIN_DESTINATION
+FROM
+  `mimetic-might-312320.staging.api_data`
+
+
+SELECT TRANSACTION_ID as TRANSACTION_NUMBER,
+SUBSTR(TRANSACTION_ID, 1, 7) AS TRANS_START_WITH,
+IF( SUBSTR(TRANSACTION_ID, 1, 7)='1611344', 'LOCAL','FOREIGN') AS SHIP_TYPE
+from `cdcproject-323214.api_dataset.api_table` LIMIT 3
+
+ver xcoms para composer: mensajes entre tareas
+https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html
+
+
+CREATE TABLE api_dataset.new_api_table(TRANSACTION_NUMBER STRING, 
+TRANS_START_WITH STRING, SHIP_TYPE STRING, SERIE INT64, BASE_COST FLOAT64, TYPE STRING,
+CITY_DESTINATION STRING, ORIGIN_DESTINATION STRING, TRUNCATED_DATETIME DATETIME)
+PARTITION BY DATE(TRUNCATED_DATETIME)
+CLUSTER BY TRANSACTION_NUMBER, SERIE, CITY_DESTINATION, ORIGIN_DESTINATION
+AS
+SELECT TRANSACTION_ID as TRANSACTION_NUMBER,
+SUBSTR(TRANSACTION_ID, 1, 7) AS TRANS_START_WITH,
+IF( SUBSTR(TRANSACTION_ID, 1, 7)='1611344', 'LOCAL','FOREIGN') AS SHIP_TYPE,
+CAST(JSON_EXTRACT(DATA, "$.shipment_ctes_stage.after_value.ctes[0].serie") AS INT64) AS SERIE,
+CAST(REPLACE(JSON_EXTRACT(data, '$.shipment_ctes_stage.after_value.ctes[0].base_cost'),"\"","") AS FLOAT64) AS BASE_COST,
+JSON_EXTRACT(DATA, "$.shipment_ctes_stage.after_value.ctes[0].type") AS TYPE,
+JSON_EXTRACT(DATA, "$.shipment_ctes_stage.after_value.ctes[0].dest_city") AS CITY_DESTINATION,
+JSON_EXTRACT(DATA, "$.shipment_ctes_stage.after_value.ctes[0].origin_city") AS ORIGIN_DESTINATION,
+CAST(REPLACE(PUSHED_AT," UTC", "") AS DATETIME) AS TRUNCATED_DATETIME
+from `cdcproject-323214.api_dataset.api_table` LIMIT 100
+
+CREATE VIEW cdcproject-323214.api_dataset.my_view(transaction_number, city_destination)
+AS
+SELECT TRANSACTION_NUMBER, CITY_DESTINATION FROM `cdcproject-323214.api_dataset.new_api_table` 
+WHERE DATE(TRUNCATED_DATETIME) > "2021-01-21" 
+LIMIT 1000
+

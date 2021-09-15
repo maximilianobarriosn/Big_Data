@@ -1,0 +1,11 @@
+{
+  "ProjectConf":
+  {
+    'TempLocationGCS': 'gs://cdcproject',
+    'project': 'cdcproject-321019',
+    'dataset': 'cdcproject',
+    'table': 'Customer',
+    'table2': 'Customer2',
+    'path_json_file_schema': '/home/maximiliano.barrios/IdeaProjects/project3/CustomerSchema.json'
+  }
+}
