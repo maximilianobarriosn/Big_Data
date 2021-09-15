@@ -1,0 +1,138 @@
+[
+    {
+      "mode": "NULLABLE",
+      "name": "transaction",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "ts_ms",
+      "type": "INTEGER"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "op",
+      "type": "STRING"
+    },
+    {
+      "fields": [
+        {
+          "mode": "NULLABLE",
+          "name": "email",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "first_name",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "last_name",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "id",
+          "type": "INTEGER"
+        }
+      ],
+      "mode": "NULLABLE",
+      "name": "before",
+      "type": "RECORD"
+    },
+    {
+      "fields": [
+        {
+          "mode": "NULLABLE",
+          "name": "email",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "first_name",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "last_name",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "id",
+          "type": "INTEGER"
+        }
+      ],
+      "mode": "NULLABLE",
+      "name": "after",
+      "type": "RECORD"
+    },
+    {
+      "fields": [
+        {
+          "mode": "NULLABLE",
+          "name": "xmin",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "schema",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "lsn",
+          "type": "INTEGER"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "name",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "db",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "snapshot",
+          "type": "BOOLEAN"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "version",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "table",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "ts_ms",
+          "type": "INTEGER"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "txId",
+          "type": "INTEGER"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "sequence",
+          "type": "STRING"
+        },
+        {
+          "mode": "NULLABLE",
+          "name": "connector",
+          "type": "STRING"
+        }
+      ],
+      "mode": "NULLABLE",
+      "name": "source",
+      "type": "RECORD"
+    }
+  ]

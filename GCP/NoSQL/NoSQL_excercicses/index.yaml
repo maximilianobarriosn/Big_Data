@@ -1,0 +1,31 @@
+indexes:
+
+- kind: restaurants
+  ancestor: no
+  properties:
+  - name: name
+  - name: id
+  - name: borough
+  - name: cuisine
+
+    direction: desc
+
+- kind: restaurants
+  ancestor: no
+  properties:
+  - name: name
+  - name: id
+  - name: borough
+  - name: zipcode
+
+    direction: desc
+
+- kind: restaurants
+  properties:
+  - name: name
+  - name: borough
+  - name: latitude
+  - name: longitude
+  - name: cuisine
+
+    direction: desc

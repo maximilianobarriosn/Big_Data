@@ -1,0 +1,68 @@
+############ Students inserts ##################
+### Elegi current timestamp para no tener que andar poniendo algun valor en
+### particular, es solo para testing.
+
+INSERT INTO Student(first_name, last_name, registration_number, birth_date)
+VALUES ('Maxi', 'Barrios', '1', CURRENT_TIMESTAMP),
+('Rafael', 'Nadal', '2', CURRENT_TIMESTAMP),
+('Novak', 'Djokovic', '3', CURRENT_TIMESTAMP),
+('Roger', 'Federer', '4', CURRENT_TIMESTAMP),
+('Ismael', 'Sanchez', '5', CURRENT_TIMESTAMP),
+('Julieta', 'Diaz', '6', CURRENT_TIMESTAMP),
+('Ramona', 'Gimenez', '7', CURRENT_TIMESTAMP),
+('Julia', 'Juarez', '8', CURRENT_TIMESTAMP),
+('Dana', 'Rey', '9', CURRENT_TIMESTAMP),
+('Laura', 'Ibanez', '10', CURRENT_TIMESTAMP);
+
+########## Teachers inserts ####################
+INSERT INTO Teacher(first_name, last_name, birth_date)
+VALUES ('Juan', 'Salvador', CURRENT_TIMESTAMP),
+('Ernesto', 'Ailuk', CURRENT_TIMESTAMP),
+('Federico', 'Perez', CURRENT_TIMESTAMP);
+
+###### Courses inserts #######
+INSERT INTO Course(name, assigned_teacher_id, hours_by_week, schedule_time_init, schedule_time_end, schedule_time_day)
+VALUES('Lengua', 1, 2, 1200, 1400, 'Lunes'),
+('Matematicas', 2, 3, 1600, 1900, 'Miercoles'),
+('Fisica', 3, 4, 1700, 2100, 'Viernes');
+
+##### StudentCourse inserts #####
+#### Lengua
+INSERT INTO CourseStudent(student_reg_id, course_id, first_note, second_note, third_note)
+VALUES(1, 1, 5, 6, 7),
+(2, 1, 5, 6, 7),
+(3, 1, 6, 10, 7),
+(4, 1, 7, 10, 7),
+(5, 1, 4, 4, 7),
+(6, 1, 3, 3, 7),
+(7, 1, 6, 4, 7),
+(8, 1, 7, 8, 7),
+(9, 1, 7, 8, 7),
+(10, 1, 7, 6, 7);
+
+
+#### Matematicas
+INSERT INTO CourseStudent(student_reg_id, course_id, first_note, second_note, third_note)
+VALUES(1, 2, 5, 6, 7),
+(2, 2, 4, 5, 5),
+(3, 2, 4, 10, 10),
+(4, 2, 4, 10, 9),
+(5, 2, 4, 4, 8),
+(6, 2, 4, 9, 7),
+(7, 2, 8, 9, 7),
+(8, 2, 8, 9, 7),
+(9, 2, 8, 9, 7),
+(10, 2, 8, 9, 7);
+
+#### Fisica
+INSERT INTO CourseStudent(student_reg_id, course_id, first_note, second_note, third_note)
+VALUES (1, 3, 5, 6, 7),
+(2, 3, 4, 5, 5),
+(3, 3, 4, 10, 10),
+(4, 3, 4, 6, 9),
+(5, 3, 4, 8, 10),
+(6, 3, 4, 8, 10),
+(7, 3, 4, 10, 9),
+(8, 3, 4, 8, 1),
+(9, 3, 4, 8, 1),
+(10, 3, 7, 6, 1);

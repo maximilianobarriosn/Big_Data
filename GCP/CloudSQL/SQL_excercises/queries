@@ -1,0 +1,84 @@
+1- ###########
+Course: <course-name>
+ Teacher: <last-name>, <first-name>
+ Students:
+   <last-name>, <first-name> (ordered by alphabetically by last name)
+##########
+
+
+SELECT Course.name as Course, Teacher.last_name as TeacherLastName, Teacher.first_name as TeacherFirstName, Student.last_name as StudentLastName, Student.first_name as StudentFirstName
+FROM CourseStudent
+JOIN Course ON CourseStudent.course_id = Course.id
+JOIN Student ON CourseStudent.student_reg_id = Student.registration_number
+JOIN Teacher ON Course.assigned_teacher_id = Teacher.id;
+
+2- ############################
+Percentage of students that passed/failed a given course.
+
+SELECT course_id, (CourseStudent.first_note + CourseStudent.second_note + CourseStudent.third_note)/3
+AS average
+FROM CourseStudent
+WHERE course_id=1;
+
+SELECT * FROM (SELECT course_id,
+                     (CourseStudent.first_note + CourseStudent.second_note + CourseStudent.third_note)/3
+AS average
+FROM CourseStudent
+WHERE course_id=1)
+AS COURSE_1_RESULT;
+
+----------------------------------------------
+FINAL SOLUTION: 3 QUERIES IN 3 VARIABLES
+----------------------------------------------
+
+SET @STUDENTS_COURSE_1 = (SELECT COUNT(*) FROM
+(SELECT * FROM (SELECT course_id AS course,
+                     (CourseStudent.first_note + CourseStudent.second_note + CourseStudent.third_note)/3
+AS average
+FROM CourseStudent
+WHERE course_id=1)
+AS COURSE_1_RESULT)
+AS number_students);
+
+SET @STUDENTS_COURSE_1_PASSED = (SELECT COUNT(*) FROM
+(SELECT * FROM (SELECT course_id AS course,
+                     (CourseStudent.first_note + CourseStudent.second_note + CourseStudent.third_note)/3
+AS average
+FROM CourseStudent
+WHERE course_id=1)
+AS COURSE_1_RESULT)
+AS number_students
+WHERE average >= 6);
+
+SET @PERCENTAGE_PASSED_COURSE1= (@STUDENTS_COURSE_1_PASSED/@STUDENTS_COURSE_1)*100;
+
+#################################
+3- For a given teacher, list the timeline for each course that he is assigned to (ordered by date), and the course name.
+1 query for every teacher
+#################################
+
+
+SELECT Teacher.last_name, Teacher.first_name, Course.schedule_time_day,
+Course.schedule_time_init, Course.schedule_time_end, Course.name AS course_name
+FROM Teacher
+JOIN Course
+ON Course.assigned_teacher_id = Teacher.id
+AND Teacher.id =1
+ORDER BY FIELD(Course.schedule_time_day, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes');
+
+SELECT Teacher.last_name, Teacher.first_name, Course.schedule_time_day,
+Course.schedule_time_init, Course.schedule_time_end, Course.name AS course_name
+FROM Teacher
+JOIN Course
+ON Course.assigned_teacher_id = Teacher.id
+AND Teacher.id =2
+ORDER BY FIELD(Course.schedule_time_day, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes');
+
+SELECT Teacher.last_name, Teacher.first_name, Course.schedule_time_day,
+Course.schedule_time_init, Course.schedule_time_end, Course.name AS course_name
+FROM Teacher
+JOIN Course
+ON Course.assigned_teacher_id = Teacher.id
+AND Teacher.id =3
+ORDER BY FIELD(Course.schedule_time_day, 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes');
+

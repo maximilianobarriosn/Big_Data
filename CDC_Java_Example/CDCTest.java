@@ -96,7 +96,7 @@ class TablePartition implements Partition.PartitionFn<String> {
     }
 }
 
-public class InstallTest {
+public class CDCTest {
     /* Read a JSON File and convert it to String */
     public static String readFileAsString(String file)throws Exception
     {
@@ -104,7 +104,7 @@ public class InstallTest {
     }
 
     public static void main(String[] args) throws Exception {
-        Config project_config = new Config("config.json");
+        Config project_config = new Config("ProjectConfig.json");
         PipelineOptions options = PipelineOptionsFactory.create();
         Pipeline p = Pipeline.create(options);
         options.setTempLocation(project_config.getTempLocationGCS());

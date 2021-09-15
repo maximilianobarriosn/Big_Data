@@ -1,0 +1,39 @@
+-------------------------------------------------------------------------
+1- Display all documents in the collection restaurants:
+
+select * from restaurants
+-------------------------------------------------------------------------
+
+2- Display restaurant_id, name, borough, and cuisine for all documents in the collection.
+
+    select id, name, borough, cuisine from restaurants
+
+-------------------------------------------------------------------------
+
+3- Display restaurants in the borough Bronx
+
+select * from restaurants where borough='Bronx'
+
+-------------------------------------------------------------------------
+
+4- Display 5 first restaurants in the borough Bronx
+
+select * from restaurants where borough='Bronx' LIMIT 5
+
+-------------------------------------------------------------------------
+
+5 - 6- 7- 8- can not perform a query with operator '!=' in datastore
+
+-------------------------------------------------------------------------
+
+9- Restaurants that contains Wil in name.
+
+select * from restaurants where name >= 'Wil'
+
+-------------------------------------------------------------------------
+
+10- Obtain name, borough, latitude, longitude, cuisine from restaurants whose names begin with 'Mad'.
+
+select name, borough, latitude, longitude, cuisine from restaurants where name >= 'Mad'
+
+-------------------------------------------------------------------------
