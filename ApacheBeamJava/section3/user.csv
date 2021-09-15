@@ -1,0 +1,4 @@
+SessionId,UserId,UserName,VideoId,Duration,StartTime,Sex
+1001,1,James,1,500,2011-11-11T10:00:00Z,1
+1002,2,Leena,2,500,2011-11-12T10:00:00Z,2
+1003,3,James,2,1500,2011-12-12T10:00:00Z,1

@@ -1,0 +1,15 @@
+{
+	"deviceId":"devA",
+	"name":"Building A",
+	"description":"Building A floor 4",
+	"eventtime":"12345678910",
+	"temperature":75.0,
+	"temperature_unit":"F"
+}
+
+{"deviceId":"devA","name":"Building A","description":"Building A floor 4","eventtime":"12345678910","temperature":75.0,"unit":"F"}
+{"deviceId":"devB","name":"Building A","description":"Building A floor 4","eventtime":"12345678910","temperature":80.0,"unit":"F"}
+{"deviceId":"devC","name":"Building A","description":"Building A floor 4","eventtime":"12345678910","temperature":100.0,"unit":"F"}
+{"deviceId":"devA","name":"Building A","description":"Building A floor 4","eventtime":"12345678910","temperature":90.0,"unit":"F"}
+{"deviceId":"devB","name":"Building A","description":"Building A floor 4","eventtime":"12345678910","temperature":55.0,"unit":"F"}
+{"deviceId":"devC","name":"Building A","description":"Building A floor 4","eventtime":"12345678910","temperature":120.0,"unit":"F"}
