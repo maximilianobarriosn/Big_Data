@@ -1,4 +1,4 @@
-# Big Data & Cloud Repository - Maximiliano Barrios
+# Big Data & Cloud - Repository - Maximiliano Barrios
 
 ![Big Data image](./big_data.png)
 
@@ -22,7 +22,7 @@
 
 ## 1. Repository Description
 
-My name is Maximiliano and I was a Ssr Python Developer but now working in Big Data & Cloud (GCP) projects. Preparing to certificate as a Professional Data Engineer in Google Cloud Platform.
+My name is Maximiliano and I was a Python Developer but now working in Big Data & Cloud (GCP) projects. Preparing to certificate as a Professional Data Engineer in Google Cloud Platform.
 
 This directory includes code and examples related to Big Data Analytics and Processing. Also has some basic operations in Python, SQL, Linux, etc.
 

@@ -13,7 +13,7 @@ public class JDBCIOExample {
 
         PCollection<String> pOutput = p.apply(JdbcIO.<String>read()
                 .withDataSourceConfiguration(JdbcIO.DataSourceConfiguration
-                .create("com.mysql.jdbc.Driver","jdbc:mysql://127.0.0.1:3306/products?useSSL=false")
+                .create("com.mysql.jdbc.Driver","jdbc:mysql://your_ip_sql:3306/products?useSSL=false")
                 .withUsername("root").
                 withPassword("root"))
                 .withQuery("SELECT name, city, currency FROM product_info WHERE name = ? ")

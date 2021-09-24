@@ -1,12 +1,12 @@
 SELECT TRANSACTION_ID as TRANSACTION_NUMBER,
 
 
- FROM `your_project-321019.dsWorkshop.table_api` LIMIT 10
+ FROM `project.dataset.table_api` LIMIT 10
 
 SELECT TRANSACTION_ID as TRANSACTION_NUMBER,
 SUBSTR(TRANSACTION_ID, 1, 7) AS TRANS_START_WITH,
 IF( TRANS_START_WITH='1611344', 'LOCAL','FOREIGN') AS SHIP_TYPE
-FROM `your_project-321019.dsWorkshop.table_api` LIMIT 3
+FROM `project.dataset.table_api` LIMIT 3
 
 
 SELECT 
@@ -19,13 +19,13 @@ SELECT
   JSON_EXTRACT(data, '$.shipment_ctes_stage.after_value.ctes[0].dest_city') AS CITY_DESTINATION,
   JSON_EXTRACT(data, '$.shipment_ctes_stage.after_value.ctes[0].origin_city') AS ORIGIN_DESTINATION
 FROM
-  `mimetic-might-312320.staging.api_data`
+  `project.dataset.api_data`
 
 
 SELECT TRANSACTION_ID as TRANSACTION_NUMBER,
 SUBSTR(TRANSACTION_ID, 1, 7) AS TRANS_START_WITH,
 IF( SUBSTR(TRANSACTION_ID, 1, 7)='1611344', 'LOCAL','FOREIGN') AS SHIP_TYPE
-from `your_project-323214.api_dataset.api_table` LIMIT 3
+from `project.api_dataset.api_table` LIMIT 3
 
 ver xcoms para composer: mensajes entre tareas
 https://airflow.apache.org/docs/apache-airflow/stable/start/docker.html
@@ -46,11 +46,11 @@ JSON_EXTRACT(DATA, "$.shipment_ctes_stage.after_value.ctes[0].type") AS TYPE,
 JSON_EXTRACT(DATA, "$.shipment_ctes_stage.after_value.ctes[0].dest_city") AS CITY_DESTINATION,
 JSON_EXTRACT(DATA, "$.shipment_ctes_stage.after_value.ctes[0].origin_city") AS ORIGIN_DESTINATION,
 CAST(REPLACE(PUSHED_AT," UTC", "") AS DATETIME) AS TRUNCATED_DATETIME
-from `your_project-323214.api_dataset.api_table` LIMIT 100
+from `project.dataset.api_table` LIMIT 100
 
 CREATE VIEW your_project-323214.api_dataset.my_view(transaction_number, city_destination)
 AS
-SELECT TRANSACTION_NUMBER, CITY_DESTINATION FROM `your_project-323214.api_dataset.new_api_table` 
+SELECT TRANSACTION_NUMBER, CITY_DESTINATION FROM `project.dataset.new_api_table`
 WHERE DATE(TRUNCATED_DATETIME) > "2021-01-21" 
 LIMIT 1000
 

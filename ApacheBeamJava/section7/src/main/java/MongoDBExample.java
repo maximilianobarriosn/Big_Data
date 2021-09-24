@@ -40,7 +40,7 @@ public class MongoDBExample {
             }
         }));
 
-        pDocument.apply(MongoDbIO.write().withUri("mongodb://localhost:27017")
+        pDocument.apply(MongoDbIO.write().withUri("mongodb://your_ip:27017")
                 .withDatabase("training").withCollection("user"));
         p.run();
     }

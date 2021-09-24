@@ -6,6 +6,6 @@
     'dataset': 'cdcproject',
     'table': 'Customer',
     'table2': 'Customer2',
-    'path_json_file_schema': '/home/maximiliano.barrios/IdeaProjects/project3/CustomerSchema.json'
+    'path_json_file_schema': './CustomerSchema.json'
   }
 }

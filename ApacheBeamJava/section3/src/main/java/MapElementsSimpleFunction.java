@@ -37,7 +37,7 @@ public class MapElementsSimpleFunction {
         Pipeline p = Pipeline.create();
 
         // Convert a number of a column in a letter (1,2 -> M or F) using SimpleFunction
-        PCollection<String> pUserList = p.apply(TextIO.read().from("/home/maximiliano.barrios/Documents/sections/section3/user.csv"));
+        PCollection<String> pUserList = p.apply(TextIO.read().from("./user.csv"));
 
         PCollection<String> pOutput = pUserList.apply(MapElements.via(new User()));
 

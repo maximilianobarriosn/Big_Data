@@ -14,7 +14,7 @@
   "source":{
     "version":"1.6.0.Final",
     "connector":"postgresql",
-    "name":"cdc-postgres-instance",
+    "name":"cdc_instance",
     "ts_ms":1626716201707,
     "snapshot":"false",
     "db":"postgres",

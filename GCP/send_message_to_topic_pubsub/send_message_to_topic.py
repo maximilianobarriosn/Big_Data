@@ -28,7 +28,7 @@ def read_json_file(filename):
 test_messages = []
 #send_to_pubsub_subprocess(list_messages=test_messages, topic='topic1')
 for i in range(10):
-    test_messages.append(read_json_file(filename="/home/maximiliano.barrios/IdeaProjects/project3/message.json"))
+    test_messages.append(read_json_file(filename="./json_examples/message.json"))
 
 print(len(test_messages))
 print(test_messages)

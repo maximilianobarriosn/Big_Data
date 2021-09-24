@@ -8,7 +8,7 @@ public class MapElementsExample {
     public static void main(String[] args) {
         Pipeline p = Pipeline.create();
 
-        PCollection<String> pCustList = p.apply(TextIO.read().from("/home/maximiliano.barrios/Documents/sections/section3/local_column_file.csv"));
+        PCollection<String> pCustList = p.apply(TextIO.read().from("./local_column_file.csv"));
 
         // Transformation using Typedescriptors
         PCollection<String> pOutput = pCustList.apply(MapElements.into(TypeDescriptors.strings()).via((String obj) -> obj.toUpperCase()));

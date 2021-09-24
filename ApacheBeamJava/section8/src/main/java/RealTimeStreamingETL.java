@@ -38,7 +38,7 @@ public class RealTimeStreamingETL {
                 }))
                 .apply(Count.perElement())
                 .apply(JdbcIO.<KV<String,Long>>write().withDataSourceConfiguration(JdbcIO.DataSourceConfiguration
-                        .create("com.mysql.jdbc.Driver", "jdbc:mysql://127.0.0.1:3306/beamdb?useSSL=false")
+                        .create("com.mysql.jdbc.Driver", "jdbc:mysql://your_ip:3306/beamdb?useSSL=false")
                                 .withUsername("root").withPassword("root"))
                         .withStatement("insert into event values (?,?) ")
                         .withPreparedStatementSetter(new JdbcIO.PreparedStatementSetter<KV<String,Long>>() {
