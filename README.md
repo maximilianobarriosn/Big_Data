@@ -6,27 +6,30 @@
 
 1. [Repository Description](#1-repository-description)
 
-2. [Apache Beam in Java](#2-apache-beam-in-java)
+2. [Dataproc Workflow Templates](#2-dataproc-workflow-templates)
 
-3. [Change Data Capture](#3-change-data-capture)
+3. [Apache Beam in Java (Direct Runner and Dataflow)](#2-apache-beam-in-java)
 
-4. [Google Cloud Platform](#4-google-cloud-platform)
+4. [Change Data Capture](#3-change-data-capture)
 
-5. [Linux - Scripts and Commands](#5-linux)
+5. [Google Cloud Platform](#4-google-cloud-platform)
 
-6. [PySpark](#6-pyspark)
+6. [Linux - Scripts and Commands](#5-linux)
 
-7. [Python](#7-python)
+7. [PySpark](#6-pyspark)
 
-8. [SQL](#8-sql)
+8. [Python](#7-python)
+
+9. [SQL](#8-sql)
 
 ## 1. Repository Description
 
-My name is Maximiliano and I was a Python Developer but now working in Big Data & Cloud (GCP) projects. Preparing to certificate as a Professional Data Engineer in Google Cloud Platform.
+My name is Maximiliano and I am an Electronic Engineer from National Technological University (Argentina). I was a Python Developer but now I am working in Big Data & Cloud (GCP) projects. Preparing to certificate as a Professional Data Engineer in Google Cloud Platform.
 
 This directory includes code and examples related to Big Data Analytics and Processing. Also has some basic operations in Python, SQL, Linux, etc.
 
 Items in this repository:
+- [Dataproc Workflow Templates](dataproc-workflow-templates): this directory contains a project that implements Dataproc Workflow Templates, a tool of GCP to run Hadoop jobs using ephemeral clusters.
 - [Apache Beam in Java](ApacheBeamJava): directory that contains different sections with Apache Beam Java examples, using standalone runner, Dataproc (GCP), Google Cloud Storage (GCS) or AWS S3.
 - [Change Data Capture](CDC_Java_Example): an example of CDC implementation using Dataproc and Apache Beam connectors.
 - [GCP](GCP): python scripts and files using some GCP Tools as App Engine, Cloud Functions, PubSub, etc.
@@ -37,7 +40,13 @@ Items in this repository:
 
 → [index](#index)
 
-## 2. Apache Beam in Java
+## 2. Dataproc Workflow Templates
+
+GCP Ephemeral clusters and jobs:
+
+The objective of the project is to implement Dataproc Workflow Templates functionality combined with BigQuery column-level security. It is composed by four main jobs, orchestrated by Dataproc Workflow Templates, that perform simple transformations with Apache Spark (RDD and Dataframe API), reads data from GCS (source), and utilizes the Dataproc BigQuery connector to sink the transformed data to BigQuery. The last job of the process performs the BigQuery schema update by binding Policy Tags to the correspondent BigQuery table columns (in sync with IAM roles and member definitions).
+
+## 3. Apache Beam in Java
 
 ![](./apache_beam.png)
 
@@ -59,7 +68,7 @@ Apache Beam is a Big Data framework to process bounded and unbounded data. Strea
 
 → [index](#index)
 
-## 3. Change Data Capture
+## 4. Change Data Capture
 
 ![](cdc.png)
 
@@ -73,7 +82,7 @@ In this section, we can found a Java code example using PubSub as input (reading
 
 → [index](#index)
 
-## 4. Google Cloud Platform
+## 5. Google Cloud Platform
 
 ![img.png](GCP.png)
 
@@ -89,7 +98,7 @@ Python example using different GCP modules:
 
 → [index](#index)
 
-## 5. Linux
+## 6. Linux
 
 ![img.png](linux.png)
 Most common commands and basic bash scripts examples. 
@@ -98,7 +107,7 @@ Most common commands and basic bash scripts examples.
 
 → [index](#index)
 
-## 6. PySpark
+## 7. PySpark
 ![](pyspark.png)
 
 Solving 2 excercises in PySpark. Spark is a Big Data Framework based on Hadoop. It can process batch or streaming.
@@ -111,7 +120,7 @@ In this section you can find:
 
 → [index](#index)
 
-## 7. Python
+## 8. Python
 ![img.png](python.png)
 
 Python scripts using some libraries.
@@ -123,7 +132,7 @@ In this section:
 
 → [index](#index)
 
-## 8. SQL
+## 9. SQL
 
 ![img.png](sql.png)
 

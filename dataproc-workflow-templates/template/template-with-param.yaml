@@ -1,0 +1,126 @@
+placement:
+  managedCluster:
+    clusterName: <<CLUSTER_NAME>>-dataproc-cluster
+    config:
+      softwareConfig:
+        properties:
+          dataproc:pip.packages: google-auth==1.30.0,google-cloud==0.34.0,google-api-python-client==1.12.8
+      gceClusterConfig:
+        zoneUri: us-east1-b
+        metadata:
+          'bigquery-connector-version': '1.2.0'
+          'spark-bigquery-connector-version': '0.21.0'
+          'enable-cloud-sql-hive-metastore': 'false'
+          'additional-cloud-sql-instances': '<<PROJECT_ID>>:us-central1:jobs-metadata=tcp:0.0.0.0:5432'
+        serviceAccountScopes:
+        - https://www.googleapis.com/auth/bigquery
+        - https://www.googleapis.com/auth/cloud.useraccounts.readonly
+        - https://www.googleapis.com/auth/devstorage.read_write
+        - https://www.googleapis.com/auth/logging.write
+        - https://www.googleapis.com/auth/sqlservice.admin
+        - https://www.googleapis.com/auth/cloud-platform
+      masterConfig:
+        machineTypeUri: n1-standard-4
+        numInstances: 3
+      workerConfig:
+        machineTypeUri: n1-standard-4
+        numInstances: 4
+      initializationActions:
+      - executableFile: gs://goog-dataproc-initialization-actions-us-east1/connectors/connectors.sh
+      - executableFile: gs://goog-dataproc-initialization-actions-us-east1/cloud-sql-proxy/cloud-sql-proxy.sh
+jobs:
+- pysparkJob:
+    args:
+    - default_value
+    - default_value
+    - default_value
+    mainPythonFileUri: default_value
+  stepId: step1
+- pysparkJob:
+    args:
+    - default_value
+    - default_value
+    mainPythonFileUri: default_value
+  prerequisiteStepIds:
+  - step1
+  stepId: step2
+- pysparkJob:
+    args:
+    - default_value
+    - default_value
+    - default_value
+    mainPythonFileUri: default_value
+    jarFileUris:
+    - default_value
+  prerequisiteStepIds:
+  - step2
+  stepId: step3
+- pysparkJob:
+    args:
+    - default_value
+    - default_value
+    mainPythonFileUri: default_value
+  prerequisiteStepIds:
+  - step2
+  stepId: step4
+- pysparkJob:
+    args:
+    - default_value
+    - default_value
+    mainPythonFileUri: default_value
+  prerequisiteStepIds:
+  - step2
+  stepId: step5
+parameters:
+- name: JOB1_PROGRAM
+  fields:
+  - jobs['step1'].pysparkJob.mainPythonFileUri
+- name: JOB2_PROGRAM
+  fields:
+  - jobs['step2'].pysparkJob.mainPythonFileUri
+- name: JOB3_PROGRAM
+  fields:
+  - jobs['step3'].pysparkJob.mainPythonFileUri
+- name: JOB4_PROGRAM
+  fields:
+  - jobs['step4'].pysparkJob.mainPythonFileUri
+  - jobs['step5'].pysparkJob.mainPythonFileUri
+- name: JOB3_JARFILEURI_1
+  fields:
+  - jobs['step3'].pysparkJob.jarFileUris[0]
+- name: GCS_INPUT
+  fields:
+  - jobs['step1'].pysparkJob.args[0]
+- name: TITANIC_CLASS
+  fields:
+  - jobs['step1'].pysparkJob.args[1]
+- name: GCS_OUTPUT
+  fields:
+  - jobs['step1'].pysparkJob.args[2]
+  - jobs['step2'].pysparkJob.args[0]
+- name: TABLE_BQ
+  fields:
+  - jobs['step2'].pysparkJob.args[1]
+  - jobs['step3'].pysparkJob.args[0]
+- name: TAXONOMY_PARENT
+  fields:
+  - jobs['step3'].pysparkJob.args[1]
+- name: TAXONOMY
+  fields:
+  - jobs['step3'].pysparkJob.args[2]
+- name: GCS_BUCKET
+  fields:
+  - jobs['step4'].pysparkJob.args[0]
+  - jobs['step5'].pysparkJob.args[0]
+- name: FOLDER1
+  fields:
+  - jobs['step4'].pysparkJob.args[1]
+- name: FOLDER2
+  fields:
+  - jobs['step5'].pysparkJob.args[1]
+- name: NUM_INSTANCES_MASTER
+  fields:
+  - placement.managedCluster.config.masterConfig.numInstances
+- name: NUM_INSTANCES_WORKER
+  fields:
+  - placement.managedCluster.config.workerConfig.numInstances
