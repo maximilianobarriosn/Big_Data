@@ -26,7 +26,7 @@
 
 My name is Maximiliano and I am an Electronic Engineer from National Technological University (Argentina). I was a Python Developer but now I am working in Big Data & Cloud (GCP) projects. Preparing to certificate as a Professional Data Engineer in Google Cloud Platform.
 
-This directory includes code and examples related to Big Data Analytics and Processing. Also has some basic operations in Python, SQL, Linux, etc.
+This repository includes code and examples related to Big Data Analytics and Processing. Also has some basic operations in Python, SQL, Linux, etc.
 
 Items in this repository:
 - [Dataproc Workflow Templates](dataproc-workflow-templates): this directory contains a project that implements Dataproc Workflow Templates, a tool of GCP to run Hadoop jobs using ephemeral clusters.
