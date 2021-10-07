@@ -46,6 +46,8 @@ GCP Ephemeral clusters and jobs:
 
 The objective of the project is to implement Dataproc Workflow Templates functionality combined with BigQuery column-level security. It is composed by four main jobs, orchestrated by Dataproc Workflow Templates, that perform simple transformations with Apache Spark (RDD and Dataframe API), reads data from GCS (source), and utilizes the Dataproc BigQuery connector to sink the transformed data to BigQuery. The last job of the process performs the BigQuery schema update by binding Policy Tags to the correspondent BigQuery table columns (in sync with IAM roles and member definitions).
 
+[→ Link to the project](dataproc-workflow-templates)
+
 ## 3. Apache Beam in Java
 
 ![](./apache_beam.png)
